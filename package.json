@@ -2,8 +2,9 @@
   "name": "elysia",
   "version": "1.0.0",
   "description": "Discord Bot for ElysiaNetwork",
-  "main": "index.js",
+  "main": "./dist/index.js",
   "scripts": {
+    "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -13,7 +14,8 @@
   "keywords": [
     "typescript",
     "nodejs",
-    "discord-bot"
+    "discord-bot",
+    "javascript"
   ],
   "author": "TheRealKizu",
   "license": "GPL-3.0",
@@ -22,7 +24,9 @@
   },
   "homepage": "https://github.com/TheRealKizu/Elysia-DiscordBot#readme",
   "dependencies": {
+    "@types/node": "^14.14.7",
     "discord-akairo": "^8.1.0",
-    "discord.js": "^12.4.1"
+    "discord.js": "^12.4.1",
+    "dotenv": "^8.2.0"
   }
 }

@@ -21,4 +21,4 @@
 <!--- SUPPORT --->
 ## ⇁ Support
 
-   * Having troubles setting up the bot? Join our Discord server [here](https://discord.gg/m55hgDQ).
+   * Having troubles setting up the bot? Join our Discord server [here.](https://discord.gg/m55hgDQ)
