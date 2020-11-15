@@ -1,0 +1,24 @@
+{
+  "name": "elysia-discordbot",
+  "version": "1.0.0",
+  "description": "Discord Bot for ElysiaNetwork",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheRealKizu/Elysia-DiscordBot.git"
+  },
+  "keywords": [
+    "typescript",
+    "nodejs",
+    "discord-bot"
+  ],
+  "author": "TheRealKizu",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/TheRealKizu/Elysia-DiscordBot/issues"
+  },
+  "homepage": "https://github.com/TheRealKizu/Elysia-DiscordBot#readme"
+}
