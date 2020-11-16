@@ -6,8 +6,9 @@
 <img src="https://cdn.discordapp.com/icons/770937601757544458/3ce6dc539ec2c4b2d57d9ec3e34613bd.png?size=1024" width=30% align="right">
 
 <!--- BADGES --->
-[![GitHub license](https://img.shields.io/github/license/ElysiaNetwork/Elysia-DiscordBot?style=flat-square)](https://github.com/ElysiaNetwork/Elysia-DiscordBot/blob/master/LICENSE)
+[![License](https://img.shields.io/github/license/ElysiaNetwork/Elysia-DiscordBot?style=flat-square)](https://github.com/ElysiaNetwork/Elysia-DiscordBot/blob/master/LICENSE)
 [![Node](https://img.shields.io/badge/node-%3E%3D12.0-brightgreen?style=flat-square)](https://nodejs.org)
+[![Discord](https://img.shields.io/discord/770937601757544458?color=blue&style=flat-square)](https://discord.gg/m55hgDQ)
 
 <!--- KEY INFORMATION --->
 ## ⇁ Information
