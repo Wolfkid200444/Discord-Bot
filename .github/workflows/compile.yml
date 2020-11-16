@@ -30,4 +30,4 @@ jobs:
         run: yarn install --frozen-lockfile
         
       - name: Test compile
-        run: yarn run compile && rm -rf dist/
+        run: yarn run build && rm -rf dist/
