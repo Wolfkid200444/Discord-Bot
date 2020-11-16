@@ -42,3 +42,5 @@ class AvatarCommand extends BaseCommand {
     }
 
 }
+
+export = AvatarCommand;
