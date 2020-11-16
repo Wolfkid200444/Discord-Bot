@@ -6,7 +6,7 @@ import {
 import { join } from "path";
 import "dotenv/config";
 
-export default class Client extends AkairoClient {
+export class BaseClient extends AkairoClient {
 
     public commandHandler: CommandHandler = new CommandHandler(this, {
         directory: join(__dirname, "../../", "commands"),

@@ -1,5 +1,5 @@
-import Client from "./structures/client/Client";
+import { BaseClient } from "./structures/bot/BaseClient";
 
-const client = new Client();
+const client = new BaseClient();
 client.build()
     .catch(console.error);
