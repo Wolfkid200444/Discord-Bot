@@ -7,8 +7,8 @@
 
 <!--- BADGES --->
 [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/ElysiaNetwork/Elysia-DiscordBot/Compile%20Test?style=flat-square)](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
-[![License](https://img.shields.io/github/license/ElysiaNetwork/Elysia-DiscordBot?style=flat-square)](https://github.com/ElysiaNetwork/Elysia-DiscordBot/blob/master/LICENSE)
 [![Node](https://img.shields.io/badge/node-%3E%3D12.0-brightgreen?style=flat-square)](https://nodejs.org)
+[![License](https://img.shields.io/github/license/ElysiaNetwork/Elysia-DiscordBot?style=flat-square)](https://github.com/ElysiaNetwork/Elysia-DiscordBot/blob/master/LICENSE)
 [![Discord](https://img.shields.io/discord/770937601757544458?color=blue&style=flat-square)](https://discord.gg/m55hgDQ)
 
 <!--- KEY INFORMATION --->
