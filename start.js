@@ -1,5 +1,3 @@
-const { start } = require("repl");
-
 start();
 
 function start() {
