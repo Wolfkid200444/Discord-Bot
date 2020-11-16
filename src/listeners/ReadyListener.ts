@@ -15,7 +15,7 @@ class ReadyListener extends BaseListener {
                 name: "play.elysianetwork.xyz",
                 type: "PLAYING"
             },
-            status: "idle"
+            status: "online"
         });
 
         console.log(`Logged in as ${this.client.user.tag}!`);
