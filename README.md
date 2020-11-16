@@ -1,5 +1,5 @@
 <!--- TITLE --->
-# ★ Elysia
+# ★ Elysia Discord Bot
 > Official Discord Bot for ElysiaNetwork
 
 <!--- IMAGE --->
@@ -22,7 +22,7 @@
 
    * Install [Node.JS](https://nodejs.org/en/) or [Yarn](https://yarnpkg.com)
    * Rename `.env.example` to `.env`
-   * Install all dependencies by running `npm install`
+   * Install all dependencies by running `npm install` or `yarn install`
    * Run `npm run build` , or `yarn run build` if using Yarn
    * Start the bot with `npm start` or `yarn start`
 
