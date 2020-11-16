@@ -10,6 +10,8 @@ export class BaseClient extends AkairoClient {
 
     public commandHandler: CommandHandler = new CommandHandler(this, {
         directory: join(__dirname, "../../", "commands"),
+
+        allowMention: true,
         prefix: process.env.PREFIX
     });
 
