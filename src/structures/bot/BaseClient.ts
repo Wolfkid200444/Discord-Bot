@@ -1,8 +1,4 @@
-import { 
-    AkairoClient,
-    CommandHandler,
-    ListenerHandler
-} from "discord-akairo";
+import { AkairoClient, CommandHandler, ListenerHandler } from "discord-akairo";
 import { join } from "path";
 import "dotenv/config";
 

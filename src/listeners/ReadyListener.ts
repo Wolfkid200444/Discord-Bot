@@ -10,7 +10,7 @@ class ReadyListener extends BaseListener {
     }
 
     async exec(...args: any[]): Promise<any> {
-        this.client.user.setPresence({
+        await this.client.user.setPresence({
             activity: {
                 name: "play.elysianetwork.xyz",
                 type: "PLAYING"
