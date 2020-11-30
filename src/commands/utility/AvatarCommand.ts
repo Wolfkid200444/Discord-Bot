@@ -1,4 +1,4 @@
-import { GuildMember, Message, MessageEmbed, User } from "discord.js";
+import { GuildMember, Message, MessageEmbed } from "discord.js";
 import { BaseCommand } from "../../structures/bot/BaseCommand";
 
 class AvatarCommand extends BaseCommand {
