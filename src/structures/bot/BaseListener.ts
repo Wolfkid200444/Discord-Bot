@@ -3,7 +3,7 @@ import { BaseClient } from "./BaseClient";
 
 export class BaseListener extends Listener {
 
-    client: BaseClient;
+    client!: BaseClient;
 
     constructor(id: string, options?: ListenerOptions) {
         super(id, options)

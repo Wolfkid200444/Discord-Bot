@@ -8,7 +8,7 @@ class AvatarCommand extends BaseCommand {
             category: "utility",
             description: {
                 content: "Shows you an user's avatar",
-                usage: "<username | id | mention>"
+                usage: "(username | id | mention)"
             },
             aliases: ["pfp"],
             channel: "guild",
@@ -21,15 +21,15 @@ class AvatarCommand extends BaseCommand {
         });
     }
 
-    async exec(message: Message, { user }: { user: GuildMember }): Promise<any> {
+    async exec(message: Message, { user }: { user: GuildMember|undefined }): Promise<any> {
         const embed = new MessageEmbed()
             .setColor("0xBB94F8");
 
         if (!user) {
-            embed.setDescription(`[**Image Link**](${user.user.displayAvatarURL()})`);
-            embed.setImage(user.user.displayAvatarURL({ dynamic: true }));
+            embed.setDescription(`[**Image Link**](${user!.user.displayAvatarURL()})`);
+            embed.setImage(user!.user.displayAvatarURL({ dynamic: true }));
 
-            message.channel.send(`> Viewing avatar of ${user.user.username}`);
+            message.channel.send(`> Viewing avatar of ${user!.user.username}`);
             message.channel.send(embed);
         } else {
             embed.setDescription(`[**Image Link**](${message.author.avatarURL()})`);
