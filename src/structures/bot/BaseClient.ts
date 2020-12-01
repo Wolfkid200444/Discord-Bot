@@ -1,30 +1,24 @@
-import { 
-    AkairoClient,
-    CommandHandler,
-    ListenerHandler
-} from "discord-akairo";
+import { AkairoClient, CommandHandler, ListenerHandler } from "discord-akairo";
 import { join } from "path";
 import "dotenv/config";
 
 export class BaseClient extends AkairoClient {
 
-    public commandHandler: CommandHandler = new CommandHandler(this, {
+    protected commandHandler: CommandHandler = new CommandHandler(this, {
         directory: join(__dirname, "../../", "commands"),
 
-        allowMention: true,
-        prefix: process.env.PREFIX
+        prefix: process.env.PREFIX ?? "e!"
     });
 
-    public listenerHandler: ListenerHandler = new ListenerHandler(this, {
+    protected listenerHandler: ListenerHandler = new ListenerHandler(this, {
         directory: join(__dirname, "../../", "listeners")
     });
 
     constructor() {
         super({
-            ownerID: process.env.OWNER_ID
+            ownerID: "380307921952833537"
         }, {
             disableMentions: "everyone",
-            fetchAllMembers: true
         });
     }
 

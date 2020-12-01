@@ -1,5 +1,7 @@
 .env
-.cache
 package-lock.json
+
+.cache
+.idea
 dist
 node_modules
