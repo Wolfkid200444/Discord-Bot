@@ -19,7 +19,6 @@ export class BaseClient extends AkairoClient {
             ownerID: "380307921952833537"
         }, {
             disableMentions: "everyone",
-            fetchAllMembers: true
         });
     }
 

@@ -1,4 +1,4 @@
-import { GuildMember, Message, MessageEmbed } from "discord.js";
+import { GuildMember, Message, MessageEmbed, User } from "discord.js";
 import { BaseCommand } from "../../structures/bot/BaseCommand";
 
 class AvatarCommand extends BaseCommand {
@@ -21,21 +21,19 @@ class AvatarCommand extends BaseCommand {
         });
     }
 
-    async exec(message: Message, { user }: { user: GuildMember }): Promise<any> {
+    async exec(message: Message, { user }: { user: User }): Promise<any> {
         const embed = new MessageEmbed()
-            .setColor("0xBB94F8");
+            .setColor("0xefefef");
 
         if (user) {
-            embed.setDescription(`[**Image Link**](${user!.user.displayAvatarURL()})`);
-            embed.setImage(user!.user.displayAvatarURL({ dynamic: true, size: 1024 }));
+            embed.setImage(user.displayAvatarURL({ dynamic: true, size: 1024}));
 
-            message.channel.send(`> **Viewing avatar of ${user!.user.username}**`);
+            message.channel.send(`> **Viewing avatar** ・ **[** ${user.tag} **]**`);
             message.channel.send(embed);
         } else {
-            embed.setDescription(`[**Image Link**](${message.author.avatarURL()})`);
             embed.setImage(message.author.avatarURL({ dynamic: true, size: 1024 }));
 
-            message.channel.send(`> **Viewing avatar of ${message.author.username}**`);
+            message.channel.send(`> **Viewing avatar** ・ **[** ${message.author.tag} **]**`);
             message.channel.send(embed);
         }
 
