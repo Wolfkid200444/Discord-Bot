@@ -27,9 +27,11 @@ class AvatarCommand extends BaseCommand {
         if (user) {
             embed.setTitle(`— ${user.username}'s Avatar`);
             embed.setURL(user.avatarURL({ dynamic: true, size: 1024 }));
+            embed.setImage(user.avatarURL({ dynamic: true, size: 1024 }));
         } else {
             embed.setTitle(`— ${message.author.username}'s Avatar`);
             embed.setURL(message.author.avatarURL({ dynamic: true, size: 1024 }));
+            embed.setImage(message.author.avatarURL({ dynamic: true, size: 1024 }));
         }
 
         return message.channel.send(embed);
