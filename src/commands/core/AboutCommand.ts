@@ -20,10 +20,10 @@ class AboutCommand extends BaseCommand {
             .setThumbnail(this.client.user.avatarURL())
             .setTitle("— Bot Stats")
             .setDescription(
-                "— Official Discord Bot of [Elysia Network](https://home.elysianetwork.xyz)\n" +
-                "— GitHub Repo: [link](https://github.com/ElysiaNetwork/Elysia-DiscordBot)"
+                "➤ Official Discord Bot of [Elysia Network](https://home.elysianetwork.xyz)\n" +
+                "➤ GitHub Repo: [link](https://github.com/ElysiaNetwork/Elysia-DiscordBot)"
             )
-            .addField("— Process Stats", "asciidoc\n" +
+            .addField("→ Process Stats", "```asciidoc\n" +
                 "Uptime      :: " + `${this.getUptime(this.client.uptime)}\n` +
                 "WS Ping     :: " + `${this.client.ws.ping}ms\n` +
                 "Platform    :: " + "Ubuntu 20.04 LTS\n" +
