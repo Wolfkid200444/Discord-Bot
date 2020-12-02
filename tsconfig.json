@@ -2,6 +2,10 @@
   "compilerOptions": {
     "target": "ES6",
     "module": "CommonJS",
+    "lib": [
+      "ESNext",
+      "DOM"
+    ],
 
     "outDir": "dist/",
 
@@ -9,7 +13,11 @@
     "noImplicitAny": false,
     "strictNullChecks": false,
 
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "typeRoots": [
+      "node_modules/@types",
+      "typings/index.d.ts"
+    ]
   },
   "exclude": [
     "dist",

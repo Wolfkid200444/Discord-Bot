@@ -1,12 +1,8 @@
-import { AkairoClient, AkairoOptions, CommandHandler, ListenerHandler } from "discord-akairo";
+import { AkairoClient, CommandHandler, ListenerHandler } from "discord-akairo";
 import { ClientOptions } from "discord.js";
 import { join } from "path";
 import "dotenv/config";
-
-interface BaseClientOptions extends AkairoOptions {
-    ownerID?: string|string[],
-    token: string|null,
-}
+import { BaseClientOptions } from "../../../typings";
 
 export class BaseClient extends AkairoClient {
 

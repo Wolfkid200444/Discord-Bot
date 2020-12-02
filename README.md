@@ -23,7 +23,19 @@
 
    * Install [Node.JS](https://nodejs.org/en/) or [Yarn](https://yarnpkg.com)
    * Rename `.env.schema` to `.env` (example on `.env.example`)
-   * Install all dependencies by running `npm install` or `yarn install`
+   * Install all dependencies
+       * With optional dependencies
+       ```
+        $ npm install
+        or
+        $ yarn install
+       ```
+       * With no optional dependencies
+       ```
+       $ npm install --no-optional
+       or
+       $ yarn install --ignore-optional
+       ```
    * Run `npm run build` , or `yarn run build` if using Yarn
    * Start the bot with `npm start` or `yarn start`
 
