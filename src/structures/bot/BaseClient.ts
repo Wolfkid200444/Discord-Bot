@@ -1,6 +1,12 @@
-import { AkairoClient, CommandHandler, ListenerHandler } from "discord-akairo";
+import { AkairoClient, AkairoOptions, CommandHandler, ListenerHandler } from "discord-akairo";
+import { ClientOptions } from "discord.js";
 import { join } from "path";
 import "dotenv/config";
+
+interface BaseClientOptions extends AkairoOptions {
+    ownerID?: string|string[],
+    token: string|null,
+}
 
 export class BaseClient extends AkairoClient {
 
@@ -14,12 +20,8 @@ export class BaseClient extends AkairoClient {
         directory: join(__dirname, "../../", "listeners")
     });
 
-    constructor() {
-        super({
-            ownerID: "380307921952833537"
-        }, {
-            disableMentions: "everyone",
-        });
+    constructor(options: BaseClientOptions, clientOptions?: ClientOptions) {
+        super(options, clientOptions);
     }
 
     async build() {
