@@ -1,4 +1,4 @@
-import { Message, MessageAttachment, User } from "discord.js";
+import { Message, MessageEmbed, User } from "discord.js";
 import { BaseCommand } from "../../structures/bot/BaseCommand";
 
 class AvatarCommand extends BaseCommand {
@@ -22,16 +22,17 @@ class AvatarCommand extends BaseCommand {
     }
 
     async exec(message: Message, { user }: { user: User }): Promise<any> {
+        const embed = new MessageEmbed()
+            .setColor("0xefefef")
         if (user) {
-            const attachment = new MessageAttachment(user.avatarURL({ dynamic: true, size: 1024, format: "png" }));
-
-            message.channel.send(`> **Viewing avatar** ・ **[** ${user.tag} **]**`, attachment);
+            embed.setTitle(`— ${user.username}'s Avatar`);
+            embed.setURL(user.avatarURL({ dynamic: true, size: 1024 }));
         } else {
-            const attachment = new MessageAttachment(message.author.avatarURL({ dynamic: true, size: 1024, format: "png" }));
-
-            message.channel.send(`> **Viewing avatar** ・ **[** ${message.author.tag} **]**`, attachment);
+            embed.setTitle(`— ${message.author.username}'s Avatar`);
+            embed.setURL(message.author.avatarURL({ dynamic: true, size: 1024 }));
         }
 
+        return message.channel.send(embed);
     }
 
 }
