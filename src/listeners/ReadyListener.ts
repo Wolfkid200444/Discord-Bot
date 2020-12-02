@@ -12,10 +12,10 @@ class ReadyListener extends BaseListener {
     async exec(...args): Promise<any> {
         await this.client.user!.setPresence({
             activity: {
-                name: "play.elysianetwork.xyz",
+                name: "play.elysianetwork.xyz — 🔵",
                 type: "PLAYING"
             },
-            status: "online"
+            status: "idle"
         });
 
         console.log(`Logged in as ${this.client.user!.tag}!`);
