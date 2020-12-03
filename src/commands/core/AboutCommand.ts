@@ -7,7 +7,7 @@ class AboutCommand extends BaseCommand {
         super("about", {
             category: "core",
             description: {
-                content: "???"
+                content: "Shows the bot statistics"
             },
             aliases: ["about", "stats"],
             channel: "guild",
@@ -21,15 +21,15 @@ class AboutCommand extends BaseCommand {
             .setTitle("— Bot Stats")
             .setDescription(
                 "➤ Official Discord Bot of [Elysia Network](https://home.elysianetwork.xyz)\n" +
-                "➤ GitHub Repo: [link](https://github.com/ElysiaNetwork/Elysia-DiscordBot)"
+                "➤ GitHub Repo: [Click Me](https://github.com/ElysiaNetwork/Elysia-DiscordBot)"
             )
-            .addField("→ Process Stats", "```asciidoc\n" +
+            .addField("➜ Process Stats", "```asciidoc\n" +
                 "Uptime      :: " + `${this.getUptime(this.client.uptime)}\n` +
                 "WS Ping     :: " + `${this.client.ws.ping}ms\n` +
                 "Platform    :: " + "Ubuntu 20.04 LTS\n" +
                 "Node.js     :: " + `${process.version}\n` +
                 "\n```"
-            )
+            );
         return message.channel.send(embed);
     }
 
