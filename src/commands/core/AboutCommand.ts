@@ -21,12 +21,12 @@ class AboutCommand extends BaseCommand {
             .setTitle("— Bot Stats")
             .setDescription(
                 "➤ Official Discord Bot of [Elysia Network](https://home.elysianetwork.xyz)\n" +
-                "➤ GitHub Repo: [Click Me](https://github.com/ElysiaNetwork/Elysia-DiscordBot)"
+                "➤ GitHub Repo: [Click Me](https://github.com/elysiadevel/discord-bot)"
             )
             .addField("➜ Process Stats", "```asciidoc\n" +
                 "Uptime      :: " + `${this.getUptime(this.client.uptime)}\n` +
                 "WS Ping     :: " + `${this.client.ws.ping}ms\n` +
-                "Platform    :: " + "Ubuntu 20.04 LTS\n" +
+                "Platform    :: " + "Debian 10\n" +
                 "Node.js     :: " + `${process.version}\n` +
                 "\n```"
             );

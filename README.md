@@ -3,7 +3,7 @@
 > Official Discord Bot for ElysiaNetwork
 
 <!--- IMAGE --->
-<img alt="Bot Logo" src="https://images-ext-2.discordapp.net/external/A4CHqNsWivs_3XdnfJNIPfjyS4R-a5K24kXqQMiK20Y/%3Fsize%3D1024/https/cdn.discordapp.com/avatars/777395986749456384/87bfa1eb80e496bdf00c29d3bea114f5.png?" width=30% align="right">
+<img alt="Bot Logo" src="https://images-ext-2.discordapp.net/external/sBwCEDgkZhLTjObrsK35vO9tzmWslgGpa5P2LnMJBO0/%3Fsize%3D1024/https/cdn.discordapp.com/icons/770937601757544458/7d2c09b6a51b3cb4b94180efd98577f6.webp" width=30% align="right">
 
 <!--- BADGES --->
 [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/ElysiaNetwork/Elysia-DiscordBot/Compile%20Test?style=flat-square)](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
@@ -32,9 +32,9 @@
        ```
        * With no optional dependencies
        ```
-       $ npm install --no-optional
-       or
-       $ yarn install --ignore-optional
+        $ npm install --no-optional
+        or
+        $ yarn install --ignore-optional
        ```
    * Run `npm run build` , or `yarn run build` if using Yarn
    * Start the bot with `npm start` or `yarn start`
