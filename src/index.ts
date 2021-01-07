@@ -5,7 +5,8 @@ const client = new BaseClient({
     ownerID: process.env.OWNER_ID,
     token: process.env.DISCORD_TOKEN
 }, {
-    disableMentions: "everyone"
+    disableMentions: "everyone",
+    fetchAllMembers: true
 });
 
 client.build()
