@@ -1,6 +1,7 @@
-import { Message, MessageEmbed } from "discord.js";
+import { Message } from "discord.js";
 import { inspect } from "util";
 import { BaseCommand } from "../../structures/bot/BaseCommand";
+import {IEmbed} from "../../structures/entities/IEmbed";
 
 class EvaluateCommand extends BaseCommand {
 
@@ -26,8 +27,7 @@ class EvaluateCommand extends BaseCommand {
         if (!code)
             return message.reply("Specify something to evaluate dumbo :angry:");
 
-        const embed = new MessageEmbed()
-            .setColor("0xefefef")
+        const embed = new IEmbed()
 
         try {
             let evaled = eval(code);

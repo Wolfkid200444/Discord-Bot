@@ -1,5 +1,6 @@
-import { Message, MessageEmbed } from "discord.js";
+import { Message } from "discord.js";
 import { BaseCommand } from "../../structures/bot/BaseCommand";
+import { IEmbed } from "../../structures/entities/IEmbed";
 
 class AboutCommand extends BaseCommand {
 
@@ -15,8 +16,7 @@ class AboutCommand extends BaseCommand {
     }
 
     async exec(message: Message, args: any): Promise<any> {
-        const embed = new MessageEmbed()
-            .setColor("0xefefef")
+        const embed = new IEmbed()
             .setThumbnail(this.client.user.avatarURL())
             .setTitle("— Bot Stats")
             .setDescription(
