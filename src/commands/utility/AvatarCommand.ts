@@ -1,5 +1,6 @@
-import { Message, MessageEmbed, User } from "discord.js";
+import { Message, User } from "discord.js";
 import { BaseCommand } from "../../structures/bot/BaseCommand";
+import {IEmbed} from "../../structures/entities/IEmbed";
 
 class AvatarCommand extends BaseCommand {
 
@@ -22,8 +23,8 @@ class AvatarCommand extends BaseCommand {
     }
 
     async exec(message: Message, { user }: { user: User }): Promise<any> {
-        const embed = new MessageEmbed()
-            .setColor("0xefefef")
+        const embed = new IEmbed()
+
         if (user) {
             embed.setTitle(`— ${user.username}'s Avatar`);
             embed.setURL(user.avatarURL({ dynamic: true, size: 1024 }));

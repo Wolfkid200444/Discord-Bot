@@ -1,5 +1,6 @@
-import { Message, MessageEmbed } from "discord.js";
+import { Message } from "discord.js";
 import { BaseCommand } from "../../structures/bot/BaseCommand";
+import { IEmbed } from "../../structures/entities/IEmbed";
 
 class AboutCommand extends BaseCommand {
 
@@ -15,19 +16,24 @@ class AboutCommand extends BaseCommand {
     }
 
     async exec(message: Message, args: any): Promise<any> {
-        const embed = new MessageEmbed()
-            .setColor("0xefefef")
+        const embed = new IEmbed()
             .setThumbnail(this.client.user.avatarURL())
             .setTitle("— Bot Stats")
             .setDescription(
                 "➤ Official Discord Bot of [Elysia Network](https://home.elysianetwork.xyz)\n" +
                 "➤ GitHub Repo: [Click Me](https://github.com/elysiadevel/discord-bot)"
             )
+            .addField("➜ Bot Stats", "```asciidoc\n" +
+                "Total Users   :: " + `${this.client.users.cache.size}\n` +
+                "Discord.JS    :: " + `v${require("discord.js").version}\n` +
+                `Akairo        :: " + "v${require("discord-akairo").version}\n` +
+                "\n```"
+            )
             .addField("➜ Process Stats", "```asciidoc\n" +
-                "Uptime      :: " + `${this.getUptime(this.client.uptime)}\n` +
-                "WS Ping     :: " + `${this.client.ws.ping}ms\n` +
-                "Platform    :: " + "Debian 10\n" +
-                "Node.js     :: " + `${process.version}\n` +
+                "Uptime        :: " + `${this.getUptime(this.client.uptime)}\n` +
+                "WS Ping       :: " + `${this.client.ws.ping}ms\n` +
+                "Platform      :: " + "Debian 10\n" +
+                "Node.js       :: " + `${process.version}\n` +
                 "\n```"
             );
         return message.channel.send(embed);
