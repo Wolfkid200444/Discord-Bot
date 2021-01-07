@@ -24,16 +24,16 @@ class AboutCommand extends BaseCommand {
                 "➤ GitHub Repo: [Click Me](https://github.com/elysiadevel/discord-bot)"
             )
             .addField("➜ Bot Stats", "```asciidoc\n" +
-                "Total Users   :: " + `${this.client.users.cache.size}\n` +
-                "Discord.JS    :: " + `v${require("discord.js").version}\n` +
-                `Akairo        :: " + "v${require("discord-akairo").version}\n` +
+                "Total Users   ::  " + `${this.client.users.cache.size}\n` +
+                "Discord.JS    ::  " + `v${require("discord.js").version}\n` +
+                "Akairo        ::  " + `v${require("discord-akairo").version}\n` +
                 "\n```"
             )
             .addField("➜ Process Stats", "```asciidoc\n" +
-                "Uptime        :: " + `${this.getUptime(this.client.uptime)}\n` +
-                "WS Ping       :: " + `${this.client.ws.ping}ms\n` +
-                "Platform      :: " + "Debian 10\n" +
-                "Node.js       :: " + `${process.version}\n` +
+                "Uptime        ::  " + `${this.getUptime(this.client.uptime)}\n` +
+                "WS Ping       ::  " + `${this.client.ws.ping}ms\n` +
+                "Platform      ::  " + "Debian 10\n" +
+                "Node.js       ::  " + `${process.version}\n` +
                 "\n```"
             );
         return message.channel.send(embed);
