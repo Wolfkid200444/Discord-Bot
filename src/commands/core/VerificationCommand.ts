@@ -62,7 +62,7 @@ class VerificationCommand extends BaseCommand {
                 if (!reason)
                     return message.reply("Why are you rejecting it dum");
 
-                logs.send(`**${bot.user.tag}** has been rejected for **\`${reason}\`**`);
+                logs.send(`**${bot.user.tag}** has been rejected for${reason}`);
 
                 await message.guild.member(bot).kick(reason);
                 break;
