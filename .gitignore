@@ -3,5 +3,6 @@ package-lock.json
 
 .cache
 .idea
+.vsc
 dist
 node_modules
