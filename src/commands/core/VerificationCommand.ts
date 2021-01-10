@@ -46,8 +46,8 @@ class VerificationCommand extends BaseCommand {
                 const botRole = message.guild.roles.cache.find(r => r.name == "⚒️｜User Bots");
                 const unverifiedRole = message.guild.roles.cache.find(r => r.name == "⚒️｜Unverified Bots");
 
-                acceptedBot.addRole(botRole.id);
-                acceptedBot.removeRole(unverifiedRole.id);
+                await acceptedBot.roles.add(botRole.id);
+                await acceptedBot.roles.remove(unverifiedRole.id);
                 await acceptedBot.setNickname(`[ ${acceptedBotPrefix} ] ${acceptedBot.user.username}`);
                 break;
         }
