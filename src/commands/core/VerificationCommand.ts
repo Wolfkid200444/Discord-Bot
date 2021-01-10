@@ -9,15 +9,29 @@ class VerificationCommand extends BaseCommand {
                 content: "???"
             },
             aliases: ["bot", "verification", "verify"],
-            channel: "guild"
+            channel: "guild",
+            args: [
+                {
+                    id: "command",
+                    type: "string"
+                },
+                {
+                    id: "botID",
+                    type: "memberMention"
+                },
+                {
+                    id: "prefix",
+                    type: "string"
+                }
+            ]
         });
     }
 
     async exec(message, args: any): Promise<any> {
-        switch (args) {
+        switch (args.command) {
             case "accept":
-                const acceptedBot = message.mentions.members.first() || message.guild.members.cache.get(args[1]);
-                const acceptedBotPrefix = args[2];
+                const acceptedBot = message.mentions.members.first() || message.guild.members.cache.get(args.botID);
+                const acceptedBotPrefix = args.prefix;
 
                 if (!acceptedBot)
                     return message.reply("Who you accepting dummy");
