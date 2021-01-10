@@ -26,17 +26,17 @@ class MessageListener extends BaseListener {
 			}
 
 			if (message.deletable)
-				message.delete();
+				await message.delete();
 
 
 			if (!args[1])
 				return message.reply("Specify your bot's prefix!").then(msg => {
-					message.delete(options);
+					msg.delete(options);
 				});
 			
 			if (!submittedBot.bot)
 				return message.reply("Specified bot ID is not an bot!").then(msg => {
-					message.delete(options);
+					msg.delete(options);
 				});
 
 			const queueLogChannel = message.guild.channels.cache.get("797644483340271677");
@@ -48,20 +48,12 @@ class MessageListener extends BaseListener {
 				.addField("Bot Info", "```\nUsername: " + submittedBot.tag + "\nID: " + submittedBot.id + "\n```" )
 				.addField("Dev Info", "```\nUsername: " + message.author.tag + "\nID: " + message.author.id + "\n```" )
 				.setFooter(`Prefix: ${args[1]}`);
-			message.channel.send(embed);
+			await message.channel.send(embed);
 
 			// @ts-ignore
 			queueLogChannel.send(`**${submittedBot.tag}** has been added to the verification center`);
 			// @ts-ignore
-			message.guild.channels.cache.get("797648225439186954").send(`Invite link for ${submittedBot.tag}: https://discordapp.com/api/oauth2/authorize?client_id=${submittedBot.id}&permissions=3533824&scope=bot`)
-		}
-
-		switch (args[0]) {
-			case "accept":
-				// FINISH THIS
-				break;
-			case "reject":
-				break;
+			message.guild.channels.cache.get("797648225439186954").send(`Invite link for ${submittedBot.tag}: https://discordapp.com/api/oauth2/authorize?client_id=${submittedBot.id}&permissions=3533824&scope=bot`);
 		}
 
     }

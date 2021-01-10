@@ -1,4 +1,4 @@
-import { Message, User } from "discord.js";
+import { User } from "discord.js";
 import { BaseCommand } from "../../structures/bot/BaseCommand";
 import {IEmbed} from "../../structures/entities/IEmbed";
 
@@ -22,7 +22,7 @@ class AvatarCommand extends BaseCommand {
         });
     }
 
-    async exec(message: Message, { user }: { user: User }): Promise<any> {
+    async exec(message, { user }: { user: User }): Promise<any> {
         const embed = new IEmbed()
 
         if (user) {

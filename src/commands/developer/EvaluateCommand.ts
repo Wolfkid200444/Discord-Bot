@@ -1,4 +1,3 @@
-import { Message } from "discord.js";
 import { inspect } from "util";
 import { BaseCommand } from "../../structures/bot/BaseCommand";
 import {IEmbed} from "../../structures/entities/IEmbed";
@@ -23,7 +22,7 @@ class EvaluateCommand extends BaseCommand {
         });
     }
 
-    async exec(message: Message, { code }: { code: string }): Promise<any> {
+    async exec(message, { code }: { code: string }): Promise<any> {
         if (!code)
             return message.reply("Specify something to evaluate dumbo :angry:");
 
