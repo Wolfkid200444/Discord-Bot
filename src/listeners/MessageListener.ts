@@ -16,6 +16,7 @@ class MessageListener extends BaseListener {
 			return;
 			
 		const args = message.content.split(" ");
+		// Invite your bot functionality lol
 		if (message.channel.id === "790862426555023380") {
 			if (isNaN(parseInt(args[0])))
 				return;
@@ -43,20 +44,33 @@ class MessageListener extends BaseListener {
 				});
 
 			const queueLogChannel = message.guild.channels.cache.get("797644483340271677");
+			const invLink = `https://discordapp.com/api/oauth2/authorize?client_id=${submittedBot.id}&permissions=3533824&scope=bot`;
 
 			const embed = new IEmbed()
 				.setThumbnail(submittedBot.avatarURL())
-				.setTitle("Hello, " + message.author.tag)
-				.setDescription(`Thank you for inviting your bot! It will be added to ${message.guild.name} after it is tested.`)
-				.addField("Bot Info", "```\nUsername: " + submittedBot.tag + "\nID: " + submittedBot.id + "\n```" )
-				.addField("Dev Info", "```\nUsername: " + message.author.tag + "\nID: " + message.author.id + "\n```" )
-				.setFooter(`Prefix: ${args[1]}`);
+				.setAuthor(submittedBot.tag, submittedBot.avatarURL())
+				.setDescription(`Thank you for inviting your bot! It will be added to the server after it is tested.`)
+				.addField("➜ Bot Info", "```\nUsername: " + submittedBot.tag + "\nID: " + submittedBot.id + "\n```" )
+				.addField("➜ Developer Info", "```\nUsername: " + message.author.tag + "\nID: " + message.author.id + "\n```" )
+				.addField("➜ Additional Info", `Prefix: ${args[1]}\nInvite Link: [here](${invLink})`);
+				//.setFooter(`Prefix: ${args[1]} | Invite Link: `);
 			await message.channel.send(embed);
 
 			// @ts-ignore
 			queueLogChannel.send(`**${submittedBot.tag}** has been added to the verification center`);
 			// @ts-ignore
-			message.guild.channels.cache.get("797648225439186954").send(`Invite link for ${submittedBot.tag}: https://discordapp.com/api/oauth2/authorize?client_id=${submittedBot.id}&permissions=3533824&scope=bot`);
+			message.guild.channels.cache.get("797648225439186954").send(`Invite link for ${submittedBot.tag}: `);
+		}
+
+		// DISBOARD Reminder
+		if (message.content.includes("!d bump")) {
+			return message.reply("I will remind you another bump in 2 hours!")
+				.then(() => {
+					setTimeout(() => {
+						return message.reply("It's time for your another bump.")
+							.then(() => message.delete({ timeout: 1500 }));
+					}, 7200000); // 7200000 = 2 hours
+				});
 		}
 
     }
