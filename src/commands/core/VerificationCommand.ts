@@ -54,6 +54,7 @@ class VerificationCommand extends BaseCommand {
                 const reason = args.ah
                     .replace(args.command, "")
                     .replace(args.botID, "")
+                    .replace("  ", "");
 
                 if (!bot)
                     return message.reply("Who you rejecting dummy");
