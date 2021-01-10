@@ -14,7 +14,6 @@ class VerificationCommand extends BaseCommand {
     }
 
     async exec(message, args: any): Promise<any> {
-        args = message.content.split(" ");
         switch (args) {
             case "accept":
                 const acceptedBot = message.mentions.members.first() || message.guild.members.cache.get(args[1]);

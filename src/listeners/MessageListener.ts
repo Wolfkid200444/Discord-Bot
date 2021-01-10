@@ -17,6 +17,9 @@ class MessageListener extends BaseListener {
 			
 		const args = message.content.split(" ");
 		if (message.channel.id === "790862426555023380") {
+			if (isNaN(parseInt(args[0])))
+				return;
+
 			const submittedBot = await this.client.users.fetch(args[0], true, true);
 
 			console.log(submittedBot);
