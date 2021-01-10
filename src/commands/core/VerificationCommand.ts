@@ -20,7 +20,7 @@ class VerificationCommand extends BaseCommand {
                     type: "memberMention"
                 },
                 {
-                    id: "prefix",
+                    id: "ah",
                     type: "string"
                 }
             ]
@@ -28,27 +28,40 @@ class VerificationCommand extends BaseCommand {
     }
 
     async exec(message, args: any): Promise<any> {
+        const logs = message.guild.channels.cache.get("797644483340271677");
+        const bot = message.mentions.members.first() || message.guild.members.cache.get(args.botID);
         switch (args.command) {
             case "accept":
-                const acceptedBot = message.mentions.members.first() || message.guild.members.cache.get(args.botID);
-                const acceptedBotPrefix = args.prefix;
+                const acceptedBotPrefix = args.ah;
 
-                if (!acceptedBot)
+                if (!bot)
                     return message.reply("Who you accepting dummy");
 
                 if (!acceptedBotPrefix)
                     return message.reply("What's the prefix dum");
 
-                const logs = message.guild.channels.cache.get("797644483340271677");
                 // @ts-ignore
                 logs.send(`**${acceptedBot.user.tag}** has been approved by <@!${message.author.id}>`);
 
                 const botRole = message.guild.roles.cache.find(r => r.name == "⚒️｜User Bots");
                 const unverifiedRole = message.guild.roles.cache.find(r => r.name == "⚒️｜Unverified Bots");
 
-                await acceptedBot.roles.add(botRole.id);
-                await acceptedBot.roles.remove(unverifiedRole.id);
-                await acceptedBot.setNickname(`[ ${acceptedBotPrefix} ] ${acceptedBot.user.username}`);
+                await bot.roles.add(botRole.id);
+                await bot.roles.remove(unverifiedRole.id);
+                await bot.setNickname(`[ ${acceptedBotPrefix} ] ${bot.user.username}`);
+                break;
+            case "reject":
+                const reason = args.ah;
+
+                if (!bot)
+                    return message.reply("Who you rejecting dummy");
+
+                if (!reason)
+                    return message.reply("Why are you rejecting it dum");
+
+                logs.send(`**${bot.user.tag}** has been rejected for \`${reason}\``);
+
+                await message.guild.member(bot).kick(reason);
                 break;
         }
     }
