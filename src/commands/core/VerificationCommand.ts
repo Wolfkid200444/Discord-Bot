@@ -21,7 +21,7 @@ class VerificationCommand extends BaseCommand {
                 },
                 {
                     id: "ah",
-                    type: "string"
+                    match: "content"
                 }
             ]
         });
@@ -51,7 +51,9 @@ class VerificationCommand extends BaseCommand {
                 await bot.setNickname(`[ ${acceptedBotPrefix} ] ${bot.user.username}`);
                 break;
             case "reject":
-                const reason = args.ah;
+                const reason = args.ah
+                    .replace(args.command, "")
+                    .replace(args.botID, "")
 
                 if (!bot)
                     return message.reply("Who you rejecting dummy");
