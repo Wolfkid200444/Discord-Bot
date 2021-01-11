@@ -41,7 +41,7 @@ class VerificationCommand extends BaseCommand {
                     return message.reply("What's the prefix dum");
 
                 // @ts-ignore
-                logs.send(`**${acceptedBot.user.tag}** has been approved by <@!${message.author.id}>`);
+                logs.send(`**${bot.user.tag}** has been approved by <@!${message.author.id}>`);
 
                 const botRole = message.guild.roles.cache.find(r => r.name == "⚒️｜User Bots");
                 const unverifiedRole = message.guild.roles.cache.find(r => r.name == "⚒️｜Unverified Bots");
