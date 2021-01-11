@@ -58,7 +58,7 @@ class MessageListener extends BaseListener {
 			// @ts-ignore
 			queueLogChannel.send(`**${submittedBot.tag}** has been added to the verification center`);
 			// @ts-ignore
-			message.guild.channels.cache.get("797648225439186954").send(`Invite link for ${submittedBot.tag}: `);
+			message.guild.channels.cache.get("797648225439186954").send(`Invite link for ${submittedBot.tag}: ${invLink}`);
 		}
 
 		// DISBOARD Reminder
