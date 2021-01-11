@@ -53,7 +53,6 @@ class MessageListener extends BaseListener {
 				.addField("➜ Bot Info", "```\nUsername: " + submittedBot.tag + "\nID: " + submittedBot.id + "\n```" )
 				.addField("➜ Developer Info", "```\nUsername: " + message.author.tag + "\nID: " + message.author.id + "\n```" )
 				.addField("➜ Additional Info", `Prefix: ${args[1]}\nInvite Link: [here](${invLink})`);
-				//.setFooter(`Prefix: ${args[1]} | Invite Link: `);
 			await message.channel.send(embed);
 
 			// @ts-ignore
@@ -64,13 +63,7 @@ class MessageListener extends BaseListener {
 
 		// DISBOARD Reminder
 		if (message.content.includes("!d bump")) {
-			return message.reply("I will remind you another bump in 2 hours!")
-				.then(() => {
-					setTimeout(() => {
-						return message.reply("It's time for your another bump.")
-							.then(() => message.delete({ timeout: 1500 }));
-					}, 7200000); // 7200000 = 2 hours
-				});
+			// TODO: Fix this
 		}
 
     }
